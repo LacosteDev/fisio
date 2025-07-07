@@ -7,6 +7,8 @@
     <title>Erica Damasceno - Fisioterapeuta Pélvica e Sexóloga Cristã</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -150,7 +152,7 @@
 
         .bg-white-pattern {
             background-color: #fff;
-            background-image: url('assets/padrao_lilas_2.png');
+            background-image: url('assets/padrao_lilas.png');
             background-repeat: repeat;
             background-size: 500px auto;
             /* Adiciona sobreposição branca para suavizar o padrão */
@@ -210,6 +212,19 @@
                 margin-right: auto !important;
             }
         }
+
+        /* Animation for sections */
+        .animate-section {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity, transform;
+        }
+
+        .animate-section.section-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
     </style>
 </head>
 
@@ -219,7 +234,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div>
-                    <img src="assets/marca.png" alt="Logo Erica Damasceno" class="h-12 w-auto">
+                    <img src="assets/marca.png" alt="Logo Erica Damasceno" loading="lazy" class="h-12 w-auto">
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-gray-700 hover:text-primary-medium transition">Início</a>
@@ -242,7 +257,7 @@
             <!-- Menu lateral (não ocupa toda a tela) -->
             <div id="custom-mobile-menu-content"
                 class="relative h-full flex flex-col items-start pl-8 pt-8 w-4/5 max-w-xs bg-white shadow-xl transform -translate-x-full transition-transform duration-300">
-                <img src="assets/marca.png" alt="Logo Erica Damasceno" id="custom-mobile-menu-logo"
+                <img src="assets/marca.png" alt="Logo Erica Damasceno" loading="lazy" id="custom-mobile-menu-logo"
                     class="h-12 w-auto mb-14 opacity-0 translate-x-[-40px] transition-all duration-300">
                 <nav class="flex flex-col gap-0 w-full">
                     <a href="#home"
@@ -290,11 +305,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white-pattern">
+    <section id="about" class="py-20 bg-white-pattern animate-section opacity-0 translate-y-8">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 flex items-center justify-center">
-                    <img src="assets/erica_2.jpeg" alt="Erica Damasceno"
+                    <img src="assets/erica.webp" alt="Erica Damasceno" loading="lazy"
                         class="rounded-lg shadow-xl w-full h-[400px] md:h-[500px] lg:h-[520px] object-cover">
                 </div>
                 <div class="lg:w-1/2">
@@ -325,7 +340,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-primary-dark">
+    <section id="services" class="py-20 bg-primary-dark animate-section opacity-0 translate-y-8">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-support-white mb-16">Como Posso Te Ajudar</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -343,7 +358,7 @@
                         autoestima.
                     </p>
                     <a href="cursos/"
-                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-200 hover:bg-primary-dark hover:text-white hover:shadow-lg focus:bg-primary-dark focus:text-white focus:shadow-lg text-center">
+                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-300 transform hover:bg-primary-dark hover:text-white hover:scale-105 focus:bg-primary-dark focus:text-white focus:scale-105 text-center">
                         Saiba Mais
                     </a>
                 </div>
@@ -360,7 +375,7 @@
                         e a qualidade de vida.
                     </p>
                     <a href="fisioterapia/"
-                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-200 hover:bg-primary-dark hover:text-white hover:shadow-lg focus:bg-primary-dark focus:text-white focus:shadow-lg text-center">
+                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-300 transform hover:bg-primary-dark hover:text-white hover:scale-105 focus:bg-primary-dark focus:text-white focus:scale-105 text-center">
                         Saiba Mais
                     </a>
                 </div>
@@ -377,7 +392,7 @@
                         base nos princípios bíblicos.
                     </p>
                     <a href="sexologa/"
-                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-200 hover:bg-primary-dark hover:text-white hover:shadow-lg focus:bg-primary-dark focus:text-white focus:shadow-lg text-center">
+                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-300 transform hover:bg-primary-dark hover:text-white hover:scale-105 focus:bg-primary-dark focus:text-white focus:scale-105 text-center">
                         Saiba Mais
                     </a>
                 </div>
@@ -386,7 +401,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white-pattern">
+    <section id="testimonials" class="py-20 bg-white-pattern animate-section opacity-0 translate-y-8">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-16">Transformando Vidas, com
                 Leveza e Fé</h2>
@@ -428,16 +443,18 @@
                 </div>
             </div>
             <div class="mt-10 flex justify-center md:justify-end">
-                <a href="depoimentos/"
-                    class="inline-block px-8 py-3 rounded-full bg-primary-dark text-white font-semibold transition duration-300 transform hover:bg-primary-medium hover:text-white hover:scale-105 focus:bg-primary-medium focus:text-white focus:scale-105 text-center shadow">
-                    Ver mais depoimentos
-                </a>
+                <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+                    <a href="depoimentos/"
+                        class="inline-block px-8 py-3 rounded-full bg-primary-dark text-white font-semibold transition duration-300 transform hover:bg-primary-medium hover:text-white hover:scale-105 focus:bg-primary-medium focus:text-white focus:scale-105 text-center shadow">
+                        Ver mais depoimentos
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-primary-dark">
+    <section id="faq" class="py-20 bg-primary-dark animate-section opacity-0 translate-y-8">
         <div class="container mx-auto px-6 max-w-4xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-support-white mb-16">Dúvidas Comuns</h2>
 
@@ -529,7 +546,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white-pattern">
+    <section id="contact" class="py-20 bg-white-pattern animate-section opacity-0 translate-y-8">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-16">Vamos Conversar?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -642,7 +659,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <!-- Logo e direitos reservados -->
                 <div class="mb-6 md:mb-0 flex flex-col items-center md:items-start w-full md:w-auto">
-                    <img src="assets/marca_cinza.png" alt="Logo Erica Damasceno"
+                    <img src="assets/marca_cinza.png" alt="Logo Erica Damasceno" loading="lazy"
                         class="h-10 w-auto mb-2 mx-auto md:mx-0">
                     <div
                         class="text-primary-light text-xs md:text-base text-center md:text-left leading-tight mb-2 md:mb-0">
@@ -838,6 +855,51 @@
             if (overlay.style.display === 'none') {
                 document.body.style.overflow = '';
             }
+        });
+
+        // Animation on scroll and navigation (IntersectionObserver version)
+        function animateSectionsWithObserver() {
+            const sections = document.querySelectorAll('.animate-section');
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        obs.unobserve(entry.target); // anima só uma vez
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // Animate on load
+        window.addEventListener('DOMContentLoaded', animateSectionsWithObserver);
+
+        // Animate on navigation click (smooth scroll)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Animate section immediately if not visible yet
+                    setTimeout(() => {
+                        targetElement.classList.add('section-visible');
+                    }, 200);
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
         });
     </script>
 </body>
