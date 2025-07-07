@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erica Damasceno - Sexóloga Cristã</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ...existing code from cursos.html <style> ... */
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F8F8;
+            color: #4A4A4A;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-primary-dark {
+            background-color: #785982;
+        }
+
+        .text-primary-dark {
+            color: #785982;
+        }
+
+        .border-primary-dark {
+            border-color: #785982;
+        }
+
+        .bg-primary-medium {
+            background-color: #B695C0;
+        }
+
+        .text-primary-medium {
+            color: #B695C0;
+        }
+
+        .bg-primary-light {
+            background-color: #D0C5D6;
+        }
+
+        .text-primary-light {
+            color: #D0C5D6;
+        }
+
+        .text-support-white {
+            color: #fff !important;
+        }
+
+        .bg-support-primary {
+            background-color: #785982 !important;
+        }
+
+        .text-primary-lightest {
+            color: #F3EDF7;
+        }
+
+        .bg-secondary-dark {
+            background-color: #C48D8A;
+        }
+
+        .text-secondary-dark {
+            color: #C48D8A;
+        }
+
+        .bg-secondary-medium {
+            background-color: #E2BEBE;
+        }
+
+        .text-secondary-medium {
+            color: #E2BEBE;
+        }
+
+        .bg-secondary-light {
+            background-color: #F5E3E1;
+        }
+
+        .text-secondary-light {
+            color: #F5E3E1;
+        }
+
+        .nav-link:hover {
+            color: #B695C0;
+        }
+
+        .btn-form {
+            background-color: #785982;
+            color: #fff;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-form:hover,
+        .btn-form:focus {
+            background-color: #B695C0;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(120, 89, 130, 0.13);
+        }
+
+        @media (min-width: 768px) {
+            .social-animate {
+                transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            }
+
+            .social-animate:hover {
+                transform: scale(1.12) translateY(-4px);
+                box-shadow: 0 6px 18px rgba(120, 89, 130, 0.18);
+                background-color: #B695C0 !important;
+            }
+        }
+
+        .bg-white-pattern {
+            background-color: #fff;
+            background-image: url('../assets/padrao_lilas_2.png');
+            background-repeat: repeat;
+            background-size: 500px auto;
+            position: relative;
+            z-index: 0;
+        }
+
+        .bg-white-pattern::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.88);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .bg-white-pattern>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        section.bg-white-pattern {
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            footer .flex.md\:flex-row {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            footer .mb-6.md\:mb-0 {
+                margin-bottom: 0.75rem !important;
+            }
+
+            footer .flex.md\:flex-row .flex.md\:flex-row {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            footer .flex.md\:flex-row .flex.md\:flex-row .flex {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 0 !important;
+            }
+
+            footer .text-primary-light {
+                text-align: center !important;
+                font-size: 0.75rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            footer .h-10 {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <img src="../assets/marca.png" alt="Logo Erica Damasceno" class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html#home"
+                        class="nav-link text-gray-700 hover:text-primary-medium transition">Início</a>
+                    <a href="../index.html#about" class="nav-link text-gray-700 hover:text-primary-medium transition">Sobre
+                        Mim</a>
+                    <a href="../index.html#services"
+                        class="nav-link text-gray-700 hover:text-primary-medium transition">Serviços</a>
+                    <a href="../index.html#testimonials"
+                        class="nav-link text-gray-700 hover:text-primary-medium transition">Depoimentos</a>
+                    <a href="../index.html#faq" class="nav-link text-gray-700 hover:text-primary-medium transition">FAQ</a>
+                    <a href="../index.html#contact"
+                        class="nav-link text-gray-700 hover:text-primary-medium transition">Contato</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl text-primary-dark"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Custom Mobile Menu Overlay -->
+        <div id="custom-mobile-menu-overlay"
+            class="fixed inset-0 z-50 bg-black bg-opacity-40 pointer-events-none transition-all duration-300"
+            style="display:none;">
+            <!-- Menu lateral (não ocupa toda a tela) -->
+            <div id="custom-mobile-menu-content"
+                class="relative h-full flex flex-col items-start pl-8 pt-8 w-4/5 max-w-xs bg-white shadow-xl transform -translate-x-full transition-transform duration-300">
+                <img src="../assets/marca.png" alt="Logo Erica Damasceno" id="custom-mobile-menu-logo"
+                    class="h-12 w-auto mb-14 opacity-0 translate-x-[-40px] transition-all duration-300">
+                <nav class="flex flex-col gap-0 w-full">
+                    <a href="../index.html#home"
+                        class="custom-mobile-link text-lg font-semibold text-primary-dark opacity-0 translate-x-[-40px] transition-all duration-300 py-3">Início</a>
+                    <hr class="border-t border-gray-200 w-[85%] ml-0">
+                    <a href="../index.html#about"
+                        class="custom-mobile-link text-lg font-semibold text-primary-dark opacity-0 translate-x-[-40px] transition-all duration-300 py-3">Sobre
+                        Mim</a>
+                    <hr class="border-t border-gray-200 w-[85%] ml-0">
+                    <a href="../index.html#services"
+                        class="custom-mobile-link text-lg font-semibold text-primary-dark opacity-0 translate-x-[-40px] transition-all duration-300 py-3">Serviços</a>
+                    <hr class="border-t border-gray-200 w-[85%] ml-0">
+                    <a href="../index.html#testimonials"
+                        class="custom-mobile-link text-lg font-semibold text-primary-dark opacity-0 translate-x-[-40px] transition-all duration-300 py-3">Depoimentos</a>
+                    <hr class="border-t border-gray-200 w-[85%] ml-0">
+                    <a href="../index.html#faq"
+                        class="custom-mobile-link text-lg font-semibold text-primary-dark opacity-0 translate-x-[-40px] transition-all duration-300 py-3">FAQ</a>
+                    <hr class="border-t border-gray-200 w-[85%] ml-0">
+                    <a href="../index.html#contact"
+                        class="custom-mobile-link text-lg font-semibold text-primary-dark opacity-0 translate-x-[-40px] transition-all duration-300 py-3">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo central em branco -->
+    <main class="pt-32 pb-20 md:pt-40 md:pb-28 bg-white-pattern min-h-[60vh] flex-1">
+        <!-- Conteúdo vazio -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white py-10 mt-auto">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo e direitos reservados -->
+                <div class="mb-6 md:mb-0 flex flex-col items-center md:items-start w-full md:w-auto">
+                    <img src="../assets/marca_cinza.png" alt="Logo Erica Damasceno" class="h-10 w-auto mb-2 mx-auto md:mx-0">
+                    <div
+                        class="text-primary-light text-xs md:text-base text-center md:text-left leading-tight mb-2 md:mb-0">
+                        © 2025 Érica Damasceno. Todos os direitos reservados.
+                    </div>
+                </div>
+                <!-- Links -->
+                <div class="flex flex-col items-center md:flex-row md:space-x-6 w-full md:w-auto">
+                    <div
+                        class="flex flex-col items-center space-y-1 md:flex-row md:space-y-0 md:space-x-6 mt-2 md:mt-0">
+                        <a href="#" class="text-primary-light hover:text-white transition text-sm md:text-base">Termos
+                            de Uso</a>
+                        <a href="#" class="text-primary-light hover:text-white transition text-sm md:text-base">Política
+                            de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu animation (same as cursos.html)
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const overlay = document.getElementById('custom-mobile-menu-overlay');
+        const content = document.getElementById('custom-mobile-menu-content');
+        const logo = document.getElementById('custom-mobile-menu-logo');
+        const links = Array.from(document.querySelectorAll('.custom-mobile-link'));
+
+        function openMenu() {
+            overlay.style.display = 'block';
+            setTimeout(() => {
+                overlay.classList.remove('bg-opacity-0');
+                overlay.classList.add('bg-opacity-40');
+                content.classList.remove('-translate-x-full');
+                content.classList.add('translate-x-0');
+            }, 10);
+
+            // Animate logo
+            setTimeout(() => {
+                logo.classList.remove('opacity-0', 'translate-x-[-40px]');
+                logo.classList.add('opacity-100', 'translate-x-0');
+            }, 350);
+
+            // Animate links in sequence
+            links.forEach((link, i) => {
+                setTimeout(() => {
+                    link.classList.remove('opacity-0', 'translate-x-[-40px]');
+                    link.classList.add('opacity-100', 'translate-x-0');
+                }, 500 + i * 100);
+            });
+
+            setTimeout(() => {
+                overlay.style.pointerEvents = 'auto';
+                document.body.style.overflow = 'hidden';
+            }, 400);
+        }
+
+        function closeMenu() {
+            overlay.classList.remove('bg-opacity-40');
+            overlay.classList.add('bg-opacity-0');
+            content.classList.remove('translate-x-0');
+            content.classList.add('-translate-x-full');
+            logo.classList.remove('opacity-100', 'translate-x-0');
+            logo.classList.add('opacity-0', 'translate-x-[-40px]');
+            links.forEach((link) => {
+                link.classList.remove('opacity-100', 'translate-x-0');
+                link.classList.add('opacity-0', 'translate-x-[-40px]');
+            });
+            overlay.style.pointerEvents = 'none';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 400);
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+
+        // Fecha ao clicar fora do menu lateral
+        overlay.addEventListener('mousedown', function (e) {
+            if (e.target === overlay) {
+                closeMenu();
+            }
+        });
+
+        // Fecha ao clicar em um link
+        links.forEach(link => {
+            link.addEventListener('click', function () {
+                closeMenu();
+            });
+        });
+    </script>
+</body>
+
+</html>

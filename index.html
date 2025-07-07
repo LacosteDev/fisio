@@ -54,6 +54,18 @@
             color: #D0C5D6;
         }
 
+        .text-support-white {
+            color: #fff !important;
+        }
+
+        .bg-support-primary {
+            background-color: #785982 !important;
+        }
+
+        .text-primary-lightest {
+            color: #F3EDF7;
+        }
+
         .bg-secondary-dark {
             background-color: #C48D8A;
         }
@@ -111,6 +123,19 @@
             box-shadow: 0 4px 16px rgba(120, 89, 130, 0.13);
         }
 
+        .btn-form {
+            background-color: #785982;
+            color: #fff;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-form:hover,
+        .btn-form:focus {
+            background-color: #B695C0;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(120, 89, 130, 0.13);
+        }
+
         @media (min-width: 768px) {
             .social-animate {
                 transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
@@ -125,7 +150,7 @@
 
         .bg-white-pattern {
             background-color: #fff;
-            background-image: url('padrao_lilas_2.png');
+            background-image: url('assets/padrao_lilas_2.png');
             background-repeat: repeat;
             background-size: 500px auto;
             /* Adiciona sobreposição branca para suavizar o padrão */
@@ -194,7 +219,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div>
-                    <img src="marca.png" alt="Logo Erica Damasceno" class="h-12 w-auto">
+                    <img src="assets/marca.png" alt="Logo Erica Damasceno" class="h-12 w-auto">
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-gray-700 hover:text-primary-medium transition">Início</a>
@@ -217,7 +242,7 @@
             <!-- Menu lateral (não ocupa toda a tela) -->
             <div id="custom-mobile-menu-content"
                 class="relative h-full flex flex-col items-start pl-8 pt-8 w-4/5 max-w-xs bg-white shadow-xl transform -translate-x-full transition-transform duration-300">
-                <img src="marca.png" alt="Logo Erica Damasceno" id="custom-mobile-menu-logo"
+                <img src="assets/marca.png" alt="Logo Erica Damasceno" id="custom-mobile-menu-logo"
                     class="h-12 w-auto mb-14 opacity-0 translate-x-[-40px] transition-all duration-300">
                 <nav class="flex flex-col gap-0 w-full">
                     <a href="#home"
@@ -269,13 +294,13 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 flex items-center justify-center">
-                    <img src="erica_2.jpeg" alt="Erica Damasceno"
+                    <img src="assets/erica_2.jpeg" alt="Erica Damasceno"
                         class="rounded-lg shadow-xl w-full h-[400px] md:h-[500px] lg:h-[520px] object-cover">
                 </div>
                 <div class="lg:w-1/2">
                     <h2 class="text-4xl font-bold text-primary-dark mb-8">Oi! Eu sou Érica Damasceno</h2>
                     <div class="mb-10">
-                        <h3 class="text-xl font-semibold text-secondary-dark mb-3">Quem Sou Eu</h3>
+                        <h3 class="text-xl font-semibold text-primary-dark mb-3">Quem Sou Eu</h3>
                         <p class="text-gray-700 mb-4">
                             Fisioterapeuta pélvica e sexóloga cristã. Sou apaixonada por cuidar de mulheres e ajudá-las
                             a viverem sua sexualidade de forma leve e prazerosa.<br>
@@ -286,7 +311,7 @@
                         </p>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold text-secondary-dark mb-3">Minha Missão</h3>
+                        <h3 class="text-xl font-semibold text-primary-dark mb-3">Minha Missão</h3>
                         <p class="text-gray-700 mb-4">
                             Meu propósito é resgatar a autoestima, o prazer e a funcionalidade do corpo feminino, sem
                             tabus e com muito respeito à história de cada mulher. Quero ser ponte entre a ciência e a
@@ -300,45 +325,61 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-secondary-light">
+    <section id="services" class="py-20 bg-primary-dark">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-16">Como Posso Te Ajudar</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-support-white mb-16">Como Posso Te Ajudar</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                    <div class="text-5xl text-primary-medium mb-6">
+                <div
+                    class="service-card bg-primary-medium p-8 rounded-lg shadow-md transition duration-300 hover:shadow-lg flex flex-col">
+                    <div class="text-5xl text-support-white mb-6">
                         <i class="fas fa-laptop"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold text-primary-dark mb-4">Cursos Online</h3>
-                    <p class="text-gray-700">Conteúdo educativo e aprofundado para você aprender no seu ritmo, com base
-                        na ciência e nos princípios cristãos. Abordamos temas como sexualidade conjugal, saúde íntima e
-                        autoestima.</p>
+                    <h3 class="text-2xl font-semibold text-support-white mb-4">Cursos Online</h3>
+                    <p class="text-primary-lightest mb-6 font-semibold">
+                        Conteúdo educativo e aprofundado para você aprender no seu ritmo,
+                        com base na ciência e nos princípios cristãos. Abordamos temas como sexualidade conjugal, saúde
+                        íntima e
+                        autoestima.
+                    </p>
+                    <a href="cursos/"
+                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-200 hover:bg-primary-dark hover:text-white hover:shadow-lg focus:bg-primary-dark focus:text-white focus:shadow-lg text-center">
+                        Saiba Mais
+                    </a>
                 </div>
-
                 <!-- Service 2 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                    <div class="text-5xl text-primary-medium mb-6">
+                <div
+                    class="service-card bg-primary-medium p-8 rounded-lg shadow-md transition duration-300 hover:shadow-lg flex flex-col">
+                    <div class="text-5xl text-support-white mb-6">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold text-primary-dark mb-4">Fisioterapia Pélvica</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-2xl font-semibold text-support-white mb-4">Fisioterapia Pélvica</h3>
+                    <p class="text-primary-lightest mb-6 font-semibold">
                         Através da fisioterapia pélvica, ajudo mulheres que sofrem com dor na relação sexual,
                         incontinência urinária, flacidez no assoalho pélvico e outros desafios que afetam a saúde íntima
                         e a qualidade de vida.
                     </p>
+                    <a href="fisioterapia/"
+                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-200 hover:bg-primary-dark hover:text-white hover:shadow-lg focus:bg-primary-dark focus:text-white focus:shadow-lg text-center">
+                        Saiba Mais
+                    </a>
                 </div>
-
                 <!-- Service 3 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                    <div class="text-5xl text-primary-medium mb-6">
+                <div
+                    class="service-card bg-primary-medium p-8 rounded-lg shadow-md transition duration-300 hover:shadow-lg flex flex-col">
+                    <div class="text-5xl text-support-white mb-6">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold text-primary-dark mb-4">Sexóloga Cristã</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-2xl font-semibold text-support-white mb-4">Sexóloga Cristã</h3>
+                    <p class="text-primary-lightest mb-6 font-semibold">
                         Como sexóloga cristã, trago informações seguras e acolhimento emocional para ajudar casais e
                         mulheres a se reconectarem com sua sexualidade — de forma leve, sem vergonha, sem culpa, e com
                         base nos princípios bíblicos.
                     </p>
+                    <a href="sexologa/"
+                        class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-200 hover:bg-primary-dark hover:text-white hover:shadow-lg focus:bg-primary-dark focus:text-white focus:shadow-lg text-center">
+                        Saiba Mais
+                    </a>
                 </div>
             </div>
         </div>
@@ -349,48 +390,56 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-16">Transformando Vidas, com
                 Leveza e Fé</h2>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
                 <div
-                    class="bg-secondary-light p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-primary-medium text-3xl mb-4">"</div>
-                    <p class="text-gray-700 italic mb-6">Depois de anos sofrendo em silêncio, encontrei na Erica a
-                        profissional e a irmã em Cristo que eu precisava. Sua abordagem respeitosa e fundamentada me
+                    class="bg-primary-medium p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-support-white text-3xl mb-4">"</div>
+                    <p class="text-primary-lightest italic mb-6 font-semibold">Depois de anos sofrendo em silêncio,
+                        encontrei na Erica
+                        a profissional e a irmã em Cristo que eu precisava. Sua abordagem respeitosa e fundamentada me
                         ajudou a superar minhas dores e tabus.</p>
-                    <div class="font-semibold text-primary-dark">Ana Clara</div>
-                    <div class="text-secondary-dark text-sm">São Paulo, SP</div>
+                    <div class="font-semibold text-support-white">Ana Clara</div>
+                    <div class="text-primary-dark text-sm font-semibold">São Paulo, SP</div>
                 </div>
-
                 <!-- Testimonial 2 -->
                 <div
-                    class="bg-secondary-light p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-primary-medium text-3xl mb-4">"</div>
-                    <p class="text-gray-700 italic mb-6">Os cursos online mudaram minha perspectiva sobre sexualidade no
-                        casamento. Pela primeira vez entendi que prazer e fé podem caminhar juntos. Gratidão por esse
+                    class="bg-primary-medium p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-support-white text-3xl mb-4">"</div>
+                    <p class="text-primary-lightest italic mb-6 font-semibold">Os cursos online mudaram minha
+                        perspectiva sobre
+                        sexualidade no casamento. Pela primeira vez entendi que prazer e fé podem caminhar juntos.
+                        Gratidão por esse
                         trabalho tão necessário!</p>
-                    <div class="font-semibold text-primary-dark">Mariana e Rodrigo</div>
-                    <div class="text-secondary-dark text-sm">Curitiba, PR</div>
+                    <div class="font-semibold text-support-white">Mariana e Rodrigo</div>
+                    <div class="text-primary-dark text-sm font-semibold">Curitiba, PR</div>
                 </div>
-
                 <!-- Testimonial 3 -->
                 <div
-                    class="bg-secondary-light p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                    <div class="text-primary-medium text-3xl mb-4">"</div>
-                    <p class="text-gray-700 italic mb-6">Como pastora, recomendo o trabalho da Erica para nossas irmãs
-                        em Cristo. Seu conhecimento técnico e sensibilidade espiritual fazem toda diferença no cuidado
+                    class="bg-primary-medium p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    <div class="text-support-white text-3xl mb-4">"</div>
+                    <p class="text-primary-lightest italic mb-6 font-semibold">Como pastora, recomendo o trabalho da
+                        Erica para nossas
+                        irmãs em Cristo. Seu conhecimento técnico e sensibilidade espiritual fazem toda diferença no
+                        cuidado
                         integral da mulher.</p>
-                    <div class="font-semibold text-primary-dark">Pastora Luiza</div>
-                    <div class="text-secondary-dark text-sm">Belo Horizonte, MG</div>
+                    <div class="font-semibold text-support-white">Pastora Luiza</div>
+                    <div class="text-primary-dark text-sm font-semibold">Belo Horizonte, MG</div>
                 </div>
+            </div>
+            <div class="mt-10 flex justify-center md:justify-end">
+                <a href="depoimentos/"
+                    class="inline-block px-8 py-3 rounded-full bg-primary-dark text-white font-semibold transition duration-300 transform hover:bg-primary-medium hover:text-white hover:scale-105 focus:bg-primary-medium focus:text-white focus:scale-105 text-center shadow">
+                    Ver mais depoimentos
+                </a>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-secondary-light">
+    <section id="faq" class="py-20 bg-primary-dark">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-16">Dúvidas Comuns</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-support-white mb-16">Dúvidas Comuns</h2>
 
             <div class="space-y-4">
                 <!-- FAQ Item 1 -->
@@ -483,12 +532,11 @@
     <section id="contact" class="py-20 bg-white-pattern">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-16">Vamos Conversar?</h2>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <!-- Contact Info -->
                 <div>
-                    <p class="text-gray-700 mb-8">Se você tem dúvidas ou deseja agendar um atendimento, preencha o
-                        formulário ao lado ou utilize um dos nossos canais. Estou aqui para te ouvir.</p>
+                    <p class="text-gray-700 mb-8">Se você tem dúvidas ou deseja agendar um atendimento, preencha
+                        o formulário ao lado ou utilize um dos nossos canais. Estou aqui para te ouvir.</p>
 
                     <div class="space-y-6">
                         <div class="flex items-start">
@@ -543,19 +591,19 @@
 
                 <!-- Contact Form -->
                 <div>
-                    <form class="bg-secondary-light p-8 rounded-lg shadow-sm">
+                    <form class="bg-primary-medium p-8 rounded-lg shadow-sm">
                         <div class="mb-6">
-                            <label for="name" class="block text-primary-dark font-medium mb-2">Nome Completo</label>
+                            <label for="name" class="block text-support-white font-medium mb-2">Nome Completo</label>
                             <input type="text" id="name"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-medium focus:border-transparent"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent"
                                 required>
                         </div>
 
                         <div class="mb-6">
-                            <label for="service" class="block text-primary-dark font-medium mb-2">Serviço de
+                            <label for="service" class="block text-support-white font-medium mb-2">Serviço de
                                 Interesse</label>
                             <select id="service"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-medium focus:border-transparent"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent"
                                 required>
                                 <option value="" disabled selected>Selecione uma opção</option>
                                 <option value="courses">Cursos Online</option>
@@ -565,22 +613,21 @@
                         </div>
 
                         <div class="mb-6 hidden" id="specific-topic-container">
-                            <label for="specific-topic" class="block text-primary-dark font-medium mb-2">Assunto
+                            <label for="specific-topic" class="block text-support-white font-medium mb-2">Assunto
                                 Específico</label>
                             <select id="specific-topic"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-medium focus:border-transparent">
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent">
                                 <!-- Options will be populated by JavaScript -->
                             </select>
                         </div>
 
                         <div class="mb-6">
-                            <label for="message" class="block text-primary-dark font-medium mb-2">Mensagem</label>
+                            <label for="message" class="block text-support-white font-medium mb-2">Mensagem</label>
                             <textarea id="message" rows="5"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-medium focus:border-transparent"></textarea>
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent"></textarea>
                         </div>
 
-                        <button type="submit"
-                            class="btn-send w-full bg-primary-dark hover:bg-primary-medium text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                        <button type="submit" class="w-full btn-form font-medium py-3 px-6 rounded-lg mt-2">
                             Enviar Mensagem
                         </button>
                     </form>
@@ -595,7 +642,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <!-- Logo e direitos reservados -->
                 <div class="mb-6 md:mb-0 flex flex-col items-center md:items-start w-full md:w-auto">
-                    <img src="marca_cinza.png" alt="Logo Erica Damasceno" class="h-10 w-auto mb-2 mx-auto md:mx-0">
+                    <img src="assets/marca_cinza.png" alt="Logo Erica Damasceno"
+                        class="h-10 w-auto mb-2 mx-auto md:mx-0">
                     <div
                         class="text-primary-light text-xs md:text-base text-center md:text-left leading-tight mb-2 md:mb-0">
                         © 2025 Érica Damasceno. Todos os direitos reservados.
