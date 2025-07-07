@@ -225,6 +225,31 @@
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
+
+        /* Animação de flutuação suave para a imagem do hero */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .float-hero-img {
+            animation: float 4.5s ease-in-out infinite;
+        }
+
+        @media (max-width: 767px) {
+            .float-hero-img {
+                animation: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -318,9 +343,9 @@
                 </div>
             </div>
             <!-- Imagem -->
-            <div class="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end pr-0 md:pr-0 mb-10 md:mb-0">
                 <img src="assets/erica.webp" alt="Erica Damasceno"
-                    class="rounded-lg shadow-xl w-full max-w-xs md:max-w-md lg:max-w-lg h-[400px] md:h-[500px] lg:h-[520px] object-cover object-top">
+                    class="rounded-lg shadow-xl w-full max-w-xl lg:max-w-2xl h-[400px] md:h-[500px] lg:h-[520px] object-cover object-top float-hero-img">
             </div>
         </div>
         <!-- Seta para baixo (apenas desktop) -->
