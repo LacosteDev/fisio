@@ -192,10 +192,142 @@
                 margin-right: auto !important;
             }
         }
+
+        /* Estilos para a seção de depoimentos */
+        #depoimentos-gallery {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        #depoimentos-gallery.section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos do modal */
+        #modal-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #modal-overlay.opacity-100 {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Setas do carrossel mobile */
+        #modal-prev-mobile,
+        #modal-next-mobile {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+
+            #modal-prev-mobile,
+            #modal-next-mobile {
+                display: block;
+            }
+        }
+
+        #modal-mobile-instruction {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s, transform 0.4s;
+            transform: translate(-50%, -12px) scale(0.98);
+            z-index: 110 !important;
+            min-width: 260px;
+            max-width: 90vw;
+            width: 320px;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        #modal-mobile-instruction.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, 0) scale(1);
+        }
+
+        @media (max-width: 767px) {
+            #modal-overlay {
+                /* Centraliza vertical e horizontal, mas limita altura máxima para não colar no topo/rodapé */
+                align-items: center !important;
+                justify-content: center !important;
+                display: flex !important;
+                padding-top: 56px !important;
+                /* espaço para topbar */
+                padding-bottom: 56px !important;
+                /* espaço para barra android */
+                box-sizing: border-box;
+            }
+
+            .modal-img-mobile {
+                margin: 0 auto !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                max-width: 80vw;
+                max-height: 60vh !important;
+                width: auto;
+                height: auto;
+                display: block;
+                object-fit: contain;
+                border-radius: 1rem;
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+                position: relative;
+                z-index: 50;
+            }
+
+            #modal-mobile-instruction {
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 100%;
+                max-width: 80vw;
+                min-width: unset;
+                box-sizing: border-box;
+                justify-content: center;
+                text-align: center;
+                white-space: nowrap;
+                border-radius: 1rem;
+            }
+
+            #modal-mobile-close {
+                display: flex !important;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                z-index: 120;
+                background: rgba(0, 0, 0, 0.85);
+                color: #fff;
+                border-radius: 9999px;
+                padding: 0.2rem 0.9rem 0.3rem 0.9rem;
+                font-size: 2rem;
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background 0.2s;
+                border: none;
+                outline: none;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+            }
+        }
+
+        #modal-mobile-close {
+            display: none;
+            /* position, style, etc. set in media query */
+        }
+
+        #modal-mobile-close:active,
+        #modal-mobile-close:hover {
+            background: rgba(0, 0, 0, 1);
+        }
     </style>
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
@@ -250,8 +382,76 @@
     </nav>
 
     <!-- Conteúdo central em branco -->
-    <main class="pt-32 pb-20 md:pt-40 md:pb-28 bg-white-pattern min-h-[60vh] flex-1">
-        <!-- Conteúdo vazio -->
+    <main class="pt-32 pb-32 md:pt-40 md:pb-40 bg-white-pattern flex-1">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-center text-primary-dark mb-12">Depoimentos em Imagem</h1>
+            <!-- Grade Desktop / Grade Mobile -->
+            <div id="depoimentos-gallery"
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 animate-section">
+                <!-- Imagens serão inseridas via JS -->
+            </div>
+        </div>
+        <!-- Modal de visualização -->
+        <div id="modal-overlay"
+            class="fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none">
+            <button id="modal-close"
+                class="absolute top-4 right-4 text-white text-3xl focus:outline-none z-60 md:block hidden">&times;</button>
+            <div class="relative w-full flex justify-center items-center">
+                <div class="relative flex flex-col items-center">
+                    <!-- Setas desktop coladas à imagem com design do print -->
+                    <div class="relative">
+                        <button id="modal-prev" class="hidden md:flex absolute top-1/2 -translate-y-1/2 z-[51]" style="
+                                left: -22px;
+                                background: #000000;
+                                border-radius: 50%;
+                                width: 44px;
+                                height: 44px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                                border: 2px solid #ffffff;
+                                padding: 0;
+                                cursor: pointer;
+                            ">
+                            <i class="fas fa-chevron-left text-white text-xl"></i>
+                        </button>
+                        <img id="modal-img" src="" alt="Depoimento"
+                            class="modal-img-mobile max-h-[60vh] max-w-[80vw] rounded-lg shadow-2xl z-50 block md:block mx-auto">
+                        <button id="modal-next" class="hidden md:flex absolute top-1/2 -translate-y-1/2 z-[51]" style="
+                                right: -22px;
+                                background: #000000;
+                                border-radius: 50%;
+                                width: 44px;
+                                height: 44px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+                                border: 2px solid #ffffff;
+                                padding: 0;
+                                cursor: pointer;
+                            ">
+                            <i class="fas fa-chevron-right text-white text-xl"></i>
+                        </button>
+                        <!-- Botão fechar mobile (agora sobre a imagem) -->
+                        <button id="modal-mobile-close" aria-label="Fechar modal" class="md:hidden">
+                            &times;
+                        </button>
+                    </div>
+                    <!-- Mensagem de instrução mobile -->
+                    <div id="modal-mobile-instruction"
+                        class="md:hidden absolute bg-black bg-opacity-80 text-white px-6 py-2 flex items-center gap-2 text-base font-medium z-[110] opacity-0 pointer-events-none transition-all duration-400">
+                        Passe para ver mais
+                        <span class="inline-flex items-center gap-1 ml-2">
+                            <i class="fas fa-chevron-left"></i>
+                            <span class="mx-1">|</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -351,6 +551,214 @@
                 closeMenu();
             });
         });
+
+        // Depoimentos - imagens
+        const depoimentosCount = 14;
+        const gallery = document.getElementById('depoimentos-gallery');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalImg = document.getElementById('modal-img');
+        const modalClose = document.getElementById('modal-close');
+        const modalPrev = document.getElementById('modal-prev');
+        const modalNext = document.getElementById('modal-next');
+        const modalPrevMobile = document.getElementById('modal-prev-mobile');
+        const modalNextMobile = document.getElementById('modal-next-mobile');
+
+        let currentIdx = 0;
+
+        // Cria as imagens na grade (desktop e mobile)
+        for (let i = 1; i <= depoimentosCount; i++) {
+            const img = document.createElement('img');
+            img.src = `./assets/${i}.jpg`;
+            img.alt = `Depoimento ${i}`;
+            img.className = "rounded-lg shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 w-full h-auto aspect-[3/4] object-cover animate-section";
+            img.dataset.idx = i - 1;
+            img.loading = "lazy";
+            img.tabIndex = 0;
+            gallery.appendChild(img);
+        }
+
+        const modalInstruction = document.getElementById('modal-mobile-instruction');
+        const modalMobileClose = document.getElementById('modal-mobile-close');
+        let instructionTimeout = null;
+        let instructionVisible = false;
+
+        // Função para mostrar a instrução com animação
+        function showMobileInstruction() {
+            if (modalInstruction) {
+                modalInstruction.classList.add('show');
+                instructionVisible = true;
+                // Esconde após 2.5s
+                instructionTimeout = setTimeout(hideMobileInstruction, 2500);
+            }
+        }
+        // Função para esconder a instrução com animação
+        function hideMobileInstruction() {
+            if (modalInstruction) {
+                modalInstruction.classList.remove('show');
+                instructionVisible = false;
+            }
+            if (instructionTimeout) {
+                clearTimeout(instructionTimeout);
+                instructionTimeout = null;
+            }
+        }
+
+        // Função para abrir modal
+        function openModal(idx) {
+            currentIdx = idx;
+            modalImg.src = `./assets/${currentIdx + 1}.jpg`;
+            modalOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            modalOverlay.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+
+            // MOBILE: mostra instrução animada e botão fechar
+            if (window.innerWidth < 768) {
+                showMobileInstruction();
+                modalMobileClose.style.display = 'flex';
+            } else {
+                hideMobileInstruction();
+                modalMobileClose.style.display = 'none';
+            }
+            
+            // Adiciona histórico para botão voltar fechar modal
+            history.pushState({ modalOpen: true }, '', '#modal');
+        }
+
+        // Função para fechar modal
+        function closeModal(triggeredByPopState = false) {
+            modalOverlay.classList.add('opacity-0', 'pointer-events-none');
+            modalOverlay.classList.remove('opacity-100');
+            document.body.style.overflow = '';
+            hideMobileInstruction();
+            modalMobileClose.style.display = 'none';
+            
+            // Remove a entrada de histórico só se não foi chamado por um evento popstate
+            if (window.location.hash === '#modal' && !triggeredByPopState) {
+                history.replaceState(null, '', window.location.pathname);
+            }
+        }
+
+        // Navegação
+        function showPrev() {
+            currentIdx = (currentIdx - 1 + depoimentosCount) % depoimentosCount;
+            modalImg.src = `./assets/${currentIdx + 1}.jpg`;
+            if (window.innerWidth < 768) hideMobileInstruction();
+        }
+        function showNext() {
+            currentIdx = (currentIdx + 1) % depoimentosCount;
+            modalImg.src = `./assets/${currentIdx + 1}.jpg`;
+            if (window.innerWidth < 768) hideMobileInstruction();
+        }
+
+        // Eventos para abrir modal (desktop e mobile)
+        gallery.addEventListener('click', function (e) {
+            if (e.target.tagName === 'IMG') {
+                openModal(Number(e.target.dataset.idx));
+            }
+        });
+
+        // Fechar modal
+        modalClose.addEventListener('click', () => closeModal());
+        modalMobileClose.addEventListener('click', () => closeModal());
+        // Fechar modal ao clicar em qualquer área fora da imagem/setas
+        modalOverlay.addEventListener('click', function (e) {
+            // Lista de elementos que NÃO devem fechar o modal quando clicados
+            const excludedElements = [modalImg, modalPrev, modalNext];
+            
+            // Verifica se o clique foi em um dos elementos excluídos ou seus filhos
+            let clickedOnExcluded = false;
+            for (const element of excludedElements) {
+                if (element && (e.target === element || element.contains(e.target))) {
+                    clickedOnExcluded = true;
+                    break;
+                }
+            }
+            
+            // Se não clicou em um elemento excluído, fecha o modal
+            if (!clickedOnExcluded) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (modalOverlay.classList.contains('opacity-100')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft' && window.innerWidth >= 768) showPrev();
+                if (e.key === 'ArrowRight' && window.innerWidth >= 768) showNext();
+            }
+        });
+
+        // Navegação setas (desktop)
+        modalPrev.addEventListener('click', function (e) {
+            e.stopPropagation(); // Evita fechar modal ao clicar na seta
+            showPrev();
+        });
+        modalNext.addEventListener('click', function (e) {
+            e.stopPropagation();
+            showNext();
+        });
+
+        // Swipe para mobile
+        let touchStartX = null;
+        modalImg.addEventListener('touchstart', function (e) {
+            if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX;
+            }
+        });
+        modalImg.addEventListener('touchend', function (e) {
+            if (touchStartX !== null && e.changedTouches.length === 1) {
+                let dx = e.changedTouches[0].clientX - touchStartX;
+                if (dx > 40) showPrev();
+                else if (dx < -40) showNext();
+                touchStartX = null;
+            }
+        });
+
+        // Se o usuário tocar na instrução, ela some imediatamente
+        if (modalInstruction) {
+            modalInstruction.addEventListener('touchstart', hideMobileInstruction);
+            modalInstruction.addEventListener('mousedown', hideMobileInstruction);
+        }
+
+        // Mostra/oculta setas e instrução conforme tela
+        function updateModalArrows() {
+            if (window.innerWidth < 768) {
+                modalPrev.style.display = 'none';
+                modalNext.style.display = 'none';
+                modalClose.classList.add('hidden');
+                modalMobileClose.style.display = 'flex';
+            } else {
+                modalPrev.style.display = '';
+                modalNext.style.display = '';
+                modalClose.classList.remove('hidden');
+                modalMobileClose.style.display = 'none';
+                hideMobileInstruction();
+            }
+        }
+        window.addEventListener('resize', updateModalArrows);
+        updateModalArrows();
+
+        // Fecha modal ao clicar em voltar (history.back)
+        window.addEventListener('popstate', function () {
+            if (modalOverlay.classList.contains('opacity-100')) {
+                closeModal(true);
+            }
+        });
+
+        // Animação de fade-in ao rolar (IntersectionObserver)
+        function animateSectionsWithObserver() {
+            const sections = document.querySelectorAll('.animate-section');
+            const observer = new window.IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            sections.forEach(section => observer.observe(section));
+        }
+        window.addEventListener('DOMContentLoaded', animateSectionsWithObserver);
     </script>
 </body>
 
