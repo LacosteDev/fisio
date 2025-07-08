@@ -250,6 +250,158 @@
                 animation: none !important;
             }
         }
+
+        /* HERO: Ajustes para desktops pequenos (1366px ou menos) */
+        @media (min-width: 1024px) and (max-width: 1366px) {
+            #home .container {
+                padding-top: 6.5rem !important;
+            }
+
+            #home .minha-missao {
+                display: none !important;
+            }
+
+            #home .float-hero-img {
+                object-position: 20% top !important;
+                /* Corta mais à esquerda */
+                max-width: 380px !important;
+            }
+        }
+
+        /* HERO: Ajustes para resoluções de 1280px até 1599px */
+        @media (min-width: 1280px) and (max-width: 1599px) {
+            #home .float-hero-img {
+                content: url('assets/erica_2.webp') !important;
+            }
+        }
+
+        /* HERO: Ajustes para tablets (768px a 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            /* Hero igual ao mobile, mas com zoom */
+            #home .container {
+                flex-direction: column-reverse !important;
+                align-items: center !important;
+                justify-content: center !important;
+                min-height: 100vh !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                transform: scale(1.13);
+                /* Centraliza o zoom */
+                transform-origin: top center;
+            }
+
+            #home .w-full.md\:w-1\/2.flex.flex-col.justify-center.items-center.md\:items-start.text-center.md\:text-left {
+                width: 100% !important;
+                align-items: center !important;
+                text-align: center !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            #home h1,
+            #home h2 {
+                padding: 0 !important;
+                margin: 0 0 1.5rem 0 !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            #home .content-columns,
+            #home .minha-missao,
+            #home .non-tablet-text {
+                display: none !important;
+            }
+
+            #home .mb-8.minha-missao,
+            #home .text-lg,
+            #home .non-tablet-text {
+                display: none !important;
+            }
+
+            #home .hero-buttons {
+                margin: 0 0 2rem 0 !important;
+                width: 100% !important;
+                justify-content: center !important;
+            }
+
+            #home .non-tablet-img {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                padding: 0 !important;
+                margin: 0 0 2rem 0 !important;
+                width: 100% !important;
+            }
+
+            #home .non-tablet-img img {
+                margin: 0 auto !important;
+                display: block !important;
+                max-width: 320px !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        /* HERO: Ajustes para telas 1440x900 que ficaram bugadas */
+        @media (min-width: 1400px) and (max-width: 1500px) {
+            #home .container {
+                padding-top: 6.5rem !important;
+            }
+
+            #home .minha-missao {
+                display: none !important;
+            }
+
+            #home .float-hero-img {
+                content: url('assets/erica_2.webp');
+                /* Vertical image for problematic resolution */
+                object-position: center top !important;
+                max-width: 380px !important;
+            }
+        }
+
+        /* ZOOM para telas maiores que full HD */
+        @media (min-width: 1921px) {
+            .container {
+                max-width: 1700px !important;
+                font-size: 1.12rem;
+            }
+
+            section {
+                padding-top: 5rem !important;
+                padding-bottom: 5rem !important;
+            }
+
+            #home {
+                min-height: 90vh !important;
+            }
+        }
+
+        /* Additional CSS to handle tablet-specific content display */
+        .content-columns,
+        .tablet-img {
+            display: none;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .content-columns {
+                display: flex !important;
+            }
+
+            .tablet-img {
+                display: block !important;
+            }
+
+            .non-tablet-text {
+                display: none !important;
+            }
+
+            .non-tablet-img {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -315,7 +467,32 @@
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-dark mb-4">Prazer e Fé em Harmonia
                 </h1>
                 <h2 class="text-xl md:text-2xl text-gray-700 mb-6">Redescubra sua Sexualidade</h2>
-                <p class="text-lg md:text-xl text-gray-600 mb-8 text-justify">
+
+                <!-- Container for tablet columns that will only be active on tablets via CSS -->
+                <div class="content-columns">
+                    <div class="text-column">
+                        <p class="text-lg md:text-xl text-gray-600 mb-8 text-justify">
+                            Oi! Eu sou <span class="font-bold text-primary-dark">Érica Damasceno</span>, fisioterapeuta
+                            pélvica
+                            e sexóloga cristã. Sou apaixonada por cuidar de mulheres e ajudá-las a viverem sua
+                            sexualidade de
+                            forma leve e prazerosa.<br>
+                            Enquanto fisioterapeuta pélvica, trabalho com o público feminino. No papel de sexóloga, meu
+                            nicho de
+                            trabalho é o público cristão.<br>
+                            Acredito que prazer e espiritualidade caminham juntos — sim, é possível viver uma
+                            sexualidade
+                            saudável e cheia de significado, do jeitinho que Deus sonhou pra gente.
+                        </p>
+                    </div>
+                    <div class="image-column">
+                        <!-- This image only shows on tablets, the default one will be hidden by CSS -->
+                        <img src="assets/erica_2.webp" alt="Erica Damasceno"
+                            class="tablet-img hidden md:hidden rounded-lg shadow-xl w-full max-w-full h-auto object-cover object-top">
+                    </div>
+                </div>
+
+                <p class="text-lg md:text-xl text-gray-600 mb-8 text-justify non-tablet-text">
                     Oi! Eu sou <span class="font-bold text-primary-dark">Érica Damasceno</span>, fisioterapeuta pélvica
                     e sexóloga cristã. Sou apaixonada por cuidar de mulheres e ajudá-las a viverem sua sexualidade de
                     forma leve e prazerosa.<br>
@@ -324,7 +501,8 @@
                     Acredito que prazer e espiritualidade caminham juntos — sim, é possível viver uma sexualidade
                     saudável e cheia de significado, do jeitinho que Deus sonhou pra gente.
                 </p>
-                <div class="mb-8">
+
+                <div class="mb-8 minha-missao">
                     <h3 class="text-xl font-semibold text-primary-dark mb-3">Minha Missão</h3>
                     <p class="text-gray-700 text-justify">
                         Meu propósito é resgatar a autoestima, o prazer e a funcionalidade do corpo feminino, sem tabus
@@ -333,7 +511,8 @@
                         mais pleno, com leveza e liberdade.
                     </p>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto justify-center md:justify-start mb-8">
+                <div
+                    class="flex flex-col sm:flex-row gap-4 w-full md:w-auto justify-center md:justify-start mb-8 hero-buttons">
                     <a href="#services"
                         class="bg-primary-dark hover:bg-primary-medium text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 text-center">Conheça
                         meus Serviços</a>
@@ -342,8 +521,8 @@
                         em Contato</a>
                 </div>
             </div>
-            <!-- Imagem -->
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end pr-0 md:pr-0 mb-10 md:mb-0">
+            <!-- Imagem principal (não aparece em tablets) -->
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end pr-0 md:pr-0 mb-10 md:mb-0 non-tablet-img">
                 <img src="assets/erica.webp" alt="Erica Damasceno"
                     class="rounded-lg shadow-xl w-full max-w-xl lg:max-w-2xl h-[400px] md:h-[500px] lg:h-[520px] object-cover object-top float-hero-img">
             </div>
@@ -429,36 +608,33 @@
                 <div
                     class="bg-primary-medium p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
                     <div class="text-support-white text-3xl mb-4">"</div>
-                    <p class="text-primary-lightest italic mb-6 font-semibold">Depois de anos sofrendo em silêncio,
-                        encontrei na Erica
-                        a profissional e a irmã em Cristo que eu precisava. Sua abordagem respeitosa e fundamentada me
-                        ajudou a superar minhas dores e tabus.</p>
-                    <div class="font-semibold text-support-white">Ana Clara</div>
-                    <div class="text-primary-dark text-sm font-semibold">São Paulo, SP</div>
+                    <p class="text-primary-lightest italic mb-6 font-semibold">Dra. Érica, quero agradecer por seu
+                        acolhimento. Cheguei à consulta cheia de incertezas, mas fui tão bem ouvida e acolhida que tudo
+                        mudou. A segurança de estar com uma profissional que sabe o que faz me deixou muito mais
+                        confiante.</p>
+                    <div class="font-semibold text-support-white">S.</div>
+                    <div class="text-primary-dark text-sm font-semibold">Salvador, BA</div>
                 </div>
                 <!-- Testimonial 2 -->
                 <div
                     class="bg-primary-medium p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
                     <div class="text-support-white text-3xl mb-4">"</div>
-                    <p class="text-primary-lightest italic mb-6 font-semibold">Os cursos online mudaram minha
-                        perspectiva sobre
-                        sexualidade no casamento. Pela primeira vez entendi que prazer e fé podem caminhar juntos.
-                        Gratidão por esse
-                        trabalho tão necessário!</p>
-                    <div class="font-semibold text-support-white">Mariana e Rodrigo</div>
-                    <div class="text-primary-dark text-sm font-semibold">Curitiba, PR</div>
+                    <p class="text-primary-lightest italic mb-6 font-semibold">Que aula maravilhosa! Já me sinto com
+                        mais disposição, e o Ravi, que costuma ser quietinho durante o dia, não parou de se mexer
+                        depois. É incrível ver um resultado tão positivo e imediato. Obrigada por essa experiência,
+                        fisioterapia é vida!</p>
+                    <div class="font-semibold text-support-white">L.</div>
+                    <div class="text-primary-dark text-sm font-semibold">Rio de Janeiro, RJ</div>
                 </div>
                 <!-- Testimonial 3 -->
                 <div
                     class="bg-primary-medium p-8 rounded-lg shadow-sm transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
                     <div class="text-support-white text-3xl mb-4">"</div>
-                    <p class="text-primary-lightest italic mb-6 font-semibold">Como pastora, recomendo o trabalho da
-                        Erica para nossas
-                        irmãs em Cristo. Seu conhecimento técnico e sensibilidade espiritual fazem toda diferença no
-                        cuidado
-                        integral da mulher.</p>
-                    <div class="font-semibold text-support-white">Pastora Luiza</div>
-                    <div class="text-primary-dark text-sm font-semibold">Belo Horizonte, MG</div>
+                    <p class="text-primary-lightest italic mb-6 font-semibold">Preciso compartilhar como estou amando a
+                        fisioterapia pélvica! No começo da gestação, tive dificuldades para urinar, e hoje não sofro
+                        mais com isso. Me sinto com muito mais disposição e livre das dores na coluna. Muda a vida!</p>
+                    <div class="font-semibold text-support-white">B.</div>
+                    <div class="text-primary-dark text-sm font-semibold">Salvador, BA</div>
                 </div>
             </div>
             <div class="mt-10 flex justify-center md:justify-end">
