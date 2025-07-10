@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/icon.svg">
+    <link rel="shortcut icon" href="../assets/icon.svg">
+
     <title>Erica Damasceno - Depoimentos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -471,9 +478,11 @@
                 <div class="flex flex-col items-center md:flex-row md:space-x-6 w-full md:w-auto">
                     <div
                         class="flex flex-col items-center space-y-1 md:flex-row md:space-y-0 md:space-x-6 mt-2 md:mt-0">
-                        <a href="#" class="text-primary-light hover:text-white transition text-sm md:text-base">Termos
+                        <a href="#" id="open-terms"
+                            class="text-primary-light hover:text-white transition text-sm md:text-base">Termos
                             de Uso</a>
-                        <a href="#" class="text-primary-light hover:text-white transition text-sm md:text-base">Política
+                        <a href="#" id="open-privacy"
+                            class="text-primary-light hover:text-white transition text-sm md:text-base">Política
                             de Privacidade</a>
                     </div>
                 </div>
@@ -481,6 +490,95 @@
         </div>
     </footer>
 
+    <!-- Modal Termos de Uso -->
+    <div id="modal-terms"
+        class="fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-40 transition-all duration-300 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-[92vw] md:w-[520px] max-h-[90vh] flex flex-col relative">
+            <button id="close-terms"
+                class="absolute top-4 right-4 text-primary-dark text-2xl font-bold hover:text-primary-medium transition-colors focus:outline-none z-10"
+                aria-label="Fechar">&times;</button>
+            <div class="px-7 pt-8 pb-4 overflow-y-auto" style="max-height:70vh;">
+                <h2 class="text-2xl font-bold mb-5 text-primary-dark">Termos de Uso</h2>
+                <ol class="list-decimal list-inside space-y-4 text-gray-800 text-base">
+                    <li>
+                        <span class="font-semibold">Aceitação dos Termos</span><br>
+                        Ao acessar e utilizar este site, você concorda e aceita os termos e condições aqui
+                        estabelecidos.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Uso do Site</span><br>
+                        O conteúdo deste site é destinado apenas para fins informativos sobre os serviços de
+                        fisioterapia pélvica e sexualidade. Não utilizamos cookies ou coleta automática de dados.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Formulário de Contato</span><br>
+                        O formulário de contato solicita apenas o nome e direciona a conversa para o WhatsApp. O contato
+                        é iniciado pelo próprio usuário, de forma voluntária.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Links para Terceiros</span><br>
+                        Este site pode conter links para redes sociais e outros sites externos. Não nos
+                        responsabilizamos pelo conteúdo, políticas ou práticas de privacidade desses sites.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Alterações nos Termos</span><br>
+                        Os termos de uso podem ser alterados a qualquer momento, sem aviso prévio. Recomendamos a
+                        revisão periódica desta página.
+                    </li>
+                </ol>
+            </div>
+            <button
+                class="bg-primary-dark hover:bg-primary-medium text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 text-center m-6 mt-2"
+                id="close-terms-btn">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Política de Privacidade -->
+    <div id="modal-privacy"
+        class="fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-40 transition-all duration-300 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-[92vw] md:w-[520px] max-h-[90vh] flex flex-col relative">
+            <button id="close-privacy"
+                class="absolute top-4 right-4 text-primary-dark text-2xl font-bold hover:text-primary-medium transition-colors focus:outline-none z-10"
+                aria-label="Fechar">&times;</button>
+            <div class="px-7 pt-8 pb-4 overflow-y-auto" style="max-height:70vh;">
+                <h2 class="text-2xl font-bold mb-5 text-primary-dark">Política de Privacidade</h2>
+                <ol class="list-decimal list-inside space-y-4 text-gray-800 text-base">
+                    <li>
+                        <span class="font-semibold">Coleta de Dados</span><br>
+                        Não coletamos dados pessoais automaticamente. O único dado solicitado é o nome, caso o usuário
+                        deseje entrar em contato via formulário.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Uso das Informações</span><br>
+                        As informações fornecidas são utilizadas exclusivamente para responder ao contato do usuário.
+                        Não compartilhamos dados com terceiros.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Redes Sociais e Links Externos</span><br>
+                        O site contém links para redes sociais e outros sites externos. Ao acessar esses links, o
+                        usuário estará sujeito às políticas de privacidade dessas plataformas.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Segurança</span><br>
+                        Adotamos medidas para proteger as informações fornecidas, mas não nos responsabilizamos por
+                        ações de terceiros ou incidentes fora do nosso controle.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Alterações nesta Política</span><br>
+                        Esta política pode ser atualizada a qualquer momento. Consulte esta página regularmente para
+                        estar ciente de eventuais mudanças.
+                    </li>
+                </ol>
+            </div>
+            <button
+                class="bg-primary-dark hover:bg-primary-medium text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 text-center m-6 mt-2"
+                id="close-privacy-btn">
+                Fechar
+            </button>
+        </div>
+    </div>
     <script>
         // Mobile menu animation (same as cursos.html)
         const menuBtn = document.getElementById('mobile-menu-button');
@@ -560,8 +658,6 @@
         const modalClose = document.getElementById('modal-close');
         const modalPrev = document.getElementById('modal-prev');
         const modalNext = document.getElementById('modal-next');
-        const modalPrevMobile = document.getElementById('modal-prev-mobile');
-        const modalNextMobile = document.getElementById('modal-next-mobile');
 
         let currentIdx = 0;
 
@@ -603,8 +699,8 @@
             }
         }
 
-        // Função para abrir modal
-        function openModal(idx) {
+        // --- MODAL DEPOIMENTOS (restaurado, isolado) ---
+        function openDepoimentoModal(idx) {
             currentIdx = idx;
             modalImg.src = `./assets/${currentIdx + 1}.jpg`;
             modalOverlay.classList.remove('opacity-0', 'pointer-events-none');
@@ -619,32 +715,30 @@
                 hideMobileInstruction();
                 modalMobileClose.style.display = 'none';
             }
-            
+
             // Adiciona histórico para botão voltar fechar modal
             history.pushState({ modalOpen: true }, '', '#modal');
         }
 
-        // Função para fechar modal
-        function closeModal(triggeredByPopState = false) {
+        function closeDepoimentoModal(triggeredByPopState = false) {
             modalOverlay.classList.add('opacity-0', 'pointer-events-none');
             modalOverlay.classList.remove('opacity-100');
             document.body.style.overflow = '';
             hideMobileInstruction();
             modalMobileClose.style.display = 'none';
-            
+
             // Remove a entrada de histórico só se não foi chamado por um evento popstate
             if (window.location.hash === '#modal' && !triggeredByPopState) {
                 history.replaceState(null, '', window.location.pathname);
             }
         }
 
-        // Navegação
-        function showPrev() {
+        function showPrevDepoimento() {
             currentIdx = (currentIdx - 1 + depoimentosCount) % depoimentosCount;
             modalImg.src = `./assets/${currentIdx + 1}.jpg`;
             if (window.innerWidth < 768) hideMobileInstruction();
         }
-        function showNext() {
+        function showNextDepoimento() {
             currentIdx = (currentIdx + 1) % depoimentosCount;
             modalImg.src = `./assets/${currentIdx + 1}.jpg`;
             if (window.innerWidth < 768) hideMobileInstruction();
@@ -653,18 +747,18 @@
         // Eventos para abrir modal (desktop e mobile)
         gallery.addEventListener('click', function (e) {
             if (e.target.tagName === 'IMG') {
-                openModal(Number(e.target.dataset.idx));
+                openDepoimentoModal(Number(e.target.dataset.idx));
             }
         });
 
-        // Fechar modal
-        modalClose.addEventListener('click', () => closeModal());
-        modalMobileClose.addEventListener('click', () => closeModal());
+        // Fechar modal depoimentos
+        modalClose.addEventListener('click', () => closeDepoimentoModal());
+        modalMobileClose.addEventListener('click', () => closeDepoimentoModal());
         // Fechar modal ao clicar em qualquer área fora da imagem/setas
         modalOverlay.addEventListener('click', function (e) {
             // Lista de elementos que NÃO devem fechar o modal quando clicados
             const excludedElements = [modalImg, modalPrev, modalNext];
-            
+
             // Verifica se o clique foi em um dos elementos excluídos ou seus filhos
             let clickedOnExcluded = false;
             for (const element of excludedElements) {
@@ -673,29 +767,29 @@
                     break;
                 }
             }
-            
+
             // Se não clicou em um elemento excluído, fecha o modal
             if (!clickedOnExcluded) {
-                closeModal();
+                closeDepoimentoModal();
             }
         });
 
         document.addEventListener('keydown', function (e) {
             if (modalOverlay.classList.contains('opacity-100')) {
-                if (e.key === 'Escape') closeModal();
-                if (e.key === 'ArrowLeft' && window.innerWidth >= 768) showPrev();
-                if (e.key === 'ArrowRight' && window.innerWidth >= 768) showNext();
+                if (e.key === 'Escape') closeDepoimentoModal();
+                if (e.key === 'ArrowLeft' && window.innerWidth >= 768) showPrevDepoimento();
+                if (e.key === 'ArrowRight' && window.innerWidth >= 768) showNextDepoimento();
             }
         });
 
         // Navegação setas (desktop)
         modalPrev.addEventListener('click', function (e) {
             e.stopPropagation(); // Evita fechar modal ao clicar na seta
-            showPrev();
+            showPrevDepoimento();
         });
         modalNext.addEventListener('click', function (e) {
             e.stopPropagation();
-            showNext();
+            showNextDepoimento();
         });
 
         // Swipe para mobile
@@ -708,8 +802,8 @@
         modalImg.addEventListener('touchend', function (e) {
             if (touchStartX !== null && e.changedTouches.length === 1) {
                 let dx = e.changedTouches[0].clientX - touchStartX;
-                if (dx > 40) showPrev();
-                else if (dx < -40) showNext();
+                if (dx > 40) showPrevDepoimento();
+                else if (dx < -40) showNextDepoimento();
                 touchStartX = null;
             }
         });
@@ -741,7 +835,7 @@
         // Fecha modal ao clicar em voltar (history.back)
         window.addEventListener('popstate', function () {
             if (modalOverlay.classList.contains('opacity-100')) {
-                closeModal(true);
+                closeDepoimentoModal(true);
             }
         });
 
@@ -759,6 +853,46 @@
             sections.forEach(section => observer.observe(section));
         }
         window.addEventListener('DOMContentLoaded', animateSectionsWithObserver);
+
+        // --- MODAIS TERMOS/PRIVACIDADE (nova lógica, isolada) ---
+        function openLegalModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLegalModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('open-terms').addEventListener('click', function (e) {
+            e.preventDefault(); openLegalModal('modal-terms');
+        });
+        document.getElementById('open-privacy').addEventListener('click', function (e) {
+            e.preventDefault(); openLegalModal('modal-privacy');
+        });
+        document.getElementById('close-terms').addEventListener('click', function () {
+            closeLegalModal('modal-terms');
+        });
+        document.getElementById('close-terms-btn').addEventListener('click', function () {
+            closeLegalModal('modal-terms');
+        });
+        document.getElementById('close-privacy').addEventListener('click', function () {
+            closeLegalModal('modal-privacy');
+        });
+        document.getElementById('close-privacy-btn').addEventListener('click', function () {
+            closeLegalModal('modal-privacy');
+        });
+        // Fecha modal ao clicar fora do conteúdo
+        ['modal-terms', 'modal-privacy'].forEach(function (id) {
+            document.getElementById(id).addEventListener('mousedown', function (e) {
+                if (e.target === this) closeLegalModal(id);
+            });
+        });
     </script>
 </body>
 
