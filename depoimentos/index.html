@@ -664,7 +664,7 @@
         // Cria as imagens na grade (desktop e mobile)
         for (let i = 1; i <= depoimentosCount; i++) {
             const img = document.createElement('img');
-            img.src = `./assets/${i}.jpg`;
+            img.src = `./assets/${i}.webp`;
             img.alt = `Depoimento ${i}`;
             img.className = "rounded-lg shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 w-full h-auto aspect-[3/4] object-cover animate-section";
             img.dataset.idx = i - 1;
@@ -702,7 +702,7 @@
         // --- MODAL DEPOIMENTOS (restaurado, isolado) ---
         function openDepoimentoModal(idx) {
             currentIdx = idx;
-            modalImg.src = `./assets/${currentIdx + 1}.jpg`;
+            modalImg.src = `./assets/${currentIdx + 1}.webp`;
             modalOverlay.classList.remove('opacity-0', 'pointer-events-none');
             modalOverlay.classList.add('opacity-100');
             document.body.style.overflow = 'hidden';
@@ -735,12 +735,12 @@
 
         function showPrevDepoimento() {
             currentIdx = (currentIdx - 1 + depoimentosCount) % depoimentosCount;
-            modalImg.src = `./assets/${currentIdx + 1}.jpg`;
+            modalImg.src = `./assets/${currentIdx + 1}.webp`;
             if (window.innerWidth < 768) hideMobileInstruction();
         }
         function showNextDepoimento() {
             currentIdx = (currentIdx + 1) % depoimentosCount;
-            modalImg.src = `./assets/${currentIdx + 1}.jpg`;
+            modalImg.src = `./assets/${currentIdx + 1}.webp`;
             if (window.innerWidth < 768) hideMobileInstruction();
         }
 
