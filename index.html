@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icon.svg">
+    <link rel="shortcut icon" href="assets/icon.svg">
+
     <title>Érica Damasceno - Fisioterapeuta Pélvica e Sexóloga Cristã</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -277,6 +284,7 @@
 
         /* HERO: Ajustes para tablets (768px a 1023px) */
         @media (min-width: 768px) and (max-width: 1023px) {
+
             /* Hero igual ao mobile, mas com zoom */
             #home .container {
                 flex-direction: column-reverse !important;
@@ -572,9 +580,9 @@
                         incontinência urinária, flacidez no assoalho pélvico e outros desafios que afetam a saúde íntima
                         e a qualidade de vida.
                     </p>
-                    <a href="fisioterapia/"
+                    <a href="#contact"
                         class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-300 transform hover:bg-primary-dark hover:text-white hover:scale-105 focus:bg-primary-dark focus:text-white focus:scale-105 text-center">
-                        Saiba Mais
+                        Entre em Contato
                     </a>
                 </div>
                 <!-- Service 3 -->
@@ -589,9 +597,9 @@
                         mulheres a se reconectarem com sua sexualidade — de forma leve, sem vergonha, sem culpa, e com
                         base nos princípios bíblicos.
                     </p>
-                    <a href="sexologa/"
+                    <a href="#contact"
                         class="mt-auto inline-block px-6 py-3 rounded-full bg-white text-primary-dark font-semibold shadow transition duration-300 transform hover:bg-primary-dark hover:text-white hover:scale-105 focus:bg-primary-dark focus:text-white focus:scale-105 text-center">
-                        Saiba Mais
+                        Entre em Contato
                     </a>
                 </div>
             </div>
@@ -652,87 +660,150 @@
     <section id="faq" class="py-20 bg-primary-dark animate-section opacity-0 translate-y-8">
         <div class="container mx-auto px-6 max-w-4xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-support-white mb-16">Dúvidas Comuns</h2>
-
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
+                <!-- FAQ 1 -->
                 <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
                     <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-primary-dark">Sexóloga cristã é compatível com a minha fé
-                            cristã?</h3>
+                        <h3 class="text-lg font-semibold text-primary-dark">O que é fisioterapia pélvica?</h3>
                         <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
                     </div>
                     <div class="faq-answer px-6 pb-0">
                         <div class="pb-6 text-gray-700">
-                            Sim! Meu trabalho é fundamentado nos princípios bíblicos de que nosso corpo é templo do
-                            Espírito Santo e que a sexualidade foi criada por Deus para ser boa. O atendimento de
-                            sexóloga cristã
-                            ajuda a viver a sexualidade de forma saudável e alinhada com os valores da fé.
+                            É uma especialidade da fisioterapia que trata disfunções na região do assoalho pélvico —
+                            como bexiga, útero, vagina, reto e músculos que sustentam esses órgãos. O foco é restaurar
+                            função, força, coordenação e aliviar dores.
                         </div>
                     </div>
                 </div>
-
-                <!-- FAQ Item 2 -->
+                <!-- FAQ 2 -->
                 <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
                     <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-primary-dark">Sinto dor na relação sexual. A fisioterapia
-                            pélvica pode ajudar?</h3>
+                        <h3 class="text-lg font-semibold text-primary-dark">Quais problemas a fisioterapia pélvica pode
+                            tratar?</h3>
                         <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
                     </div>
                     <div class="faq-answer px-6 pb-0">
                         <div class="pb-6 text-gray-700">
-                            Com certeza. A dor na relação (dispareunia) é uma das principais queixas que trato. Através
-                            de técnicas específicas de fisioterapia pélvica, podemos identificar e tratar as causas
-                            físicas da dor, que podem ser musculares, hormonais ou relacionadas a cicatrizes, sempre com
-                            muito respeito ao seu corpo e história.
+                            • Incontinência urinária (perda de xixi)<br>
+                            • Escape de gases ou fezes<br>
+                            • Prolapsos (bexiga ou útero “caído”)<br>
+                            • Dores na relação sexual<br>
+                            • Preparação e recuperação pós-parto<br>
+                            • Pós-cirurgia ginecológica<br>
+                            • Constipação intestinal<br>
+                            • Dor pélvica crônica<br>
+                            • Dificuldade para chegar ao orgasmo
                         </div>
                     </div>
                 </div>
-
-                <!-- FAQ Item 3 -->
+                <!-- FAQ 3 -->
                 <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
                     <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-primary-dark">Tenho vergonha de falar sobre meus
-                            problemas. O atendimento é sigiloso?</h3>
+                        <h3 class="text-lg font-semibold text-primary-dark">Como é feita a avaliação? Vai ter toque
+                            vaginal?</h3>
                         <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
                     </div>
                     <div class="faq-answer px-6 pb-0">
                         <div class="pb-6 text-gray-700">
-                            Totalmente. O sigilo e o respeito pela sua história são pilares do meu trabalho. Você pode
-                            ter certeza de que tudo o que for compartilhado será mantido em absoluta confidencialidade,
-                            dentro dos padrões éticos da minha profissão.
+                            A avaliação é detalhada e sempre com consentimento. Incluir palpação da musculatura vaginal,
+                            mas só se a paciente estiver confortável. Também avaliamos postura, respiração, hábitos e
+                            histórico clínico.
                         </div>
                     </div>
                 </div>
-
-                <!-- FAQ Item 4 -->
+                <!-- FAQ 4 -->
                 <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
                     <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-primary-dark">Como funcionam os cursos online?</h3>
+                        <h3 class="text-lg font-semibold text-primary-dark">A fisioterapia dói?</h3>
                         <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
                     </div>
                     <div class="faq-answer px-6 pb-0">
                         <div class="pb-6 text-gray-700">
-                            Os cursos são compostos por videoaulas e materiais de apoio que você pode acessar quando e
-                            onde quiser, através de uma plataforma segura e discreta. Cada curso aborda um tema
-                            específico com linguagem clara e abordagem cristã, incluindo exercícios práticos e espaço
-                            para dúvidas.
+                            Depende, algumas pessoas sentem um leve desconforto ao desfazer aderência. Porém,
+                            atendimento é respeitoso, com escuta ativa e técnicas suaves.
                         </div>
                     </div>
                 </div>
-
-                <!-- FAQ Item 5 -->
+                <!-- FAQ 5 -->
                 <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
                     <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
-                        <h3 class="text-lg font-semibold text-primary-dark">Preciso de encaminhamento médico para a
-                            fisioterapia pélvica?</h3>
+                        <h3 class="text-lg font-semibold text-primary-dark">Como são os exercícios?</h3>
                         <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
                     </div>
                     <div class="faq-answer px-6 pb-0">
                         <div class="pb-6 text-gray-700">
-                            Não é obrigatório. Você pode agendar uma avaliação diretamente comigo. No entanto, se você
-                            já tem algum diagnóstico médico ou está em acompanhamento com outro profissional, é
-                            interessante compartilhar essas informações para que possamos trabalhar em equipe pelo seu
-                            bem-estar.
+                            São exercícios personalizados para o assoalho pélvico, que envolvem contração, relaxamento e
+                            coordenação. Podem incluir o uso de biofeedback, eletroestimulação, cones vaginais ou bola
+                            suíça é todo o corpo.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-primary-dark">Quanto tempo dura o tratamento?</h3>
+                        <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-0">
+                        <div class="pb-6 text-gray-700">
+                            Varia de acordo com o quadro clínico. Em média, são indicadas 5 inicialmente, mas cada caso
+                            é único.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-primary-dark">A fisioterapia pélvica pode melhorar a
+                            relação sexual?</h3>
+                        <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-0">
+                        <div class="pb-6 text-gray-700">
+                            Sim! Ela melhora a consciência corporal, alivia dores, aumenta a circulação e fortalece ou
+                            libera tensões dos músculos vaginais, o que pode intensificar o prazer e facilitar o
+                            orgasmo.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 8 -->
+                <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-primary-dark">Quem pode fazer fisioterapia pélvica?</h3>
+                        <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-0">
+                        <div class="pb-6 text-gray-700">
+                            Qualquer mulher que tenha desconfortos, dores ou alterações urinárias, intestinais ou
+                            sexuais. Também é indicada na gestação, no pós-parto e na menopausa.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 9 -->
+                <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-primary-dark">Preciso de encaminhamento médico?</h3>
+                        <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-0">
+                        <div class="pb-6 text-gray-700">
+                            Não necessariamente. Você pode procurar diretamente a fisioterapeuta pélvica. Mas, em alguns
+                            casos, o trabalho é feito em parceria com ginecologistas, urologistas e outros
+                            profissionais.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 10 -->
+                <div class="faq-item bg-white rounded-lg overflow-hidden shadow-sm">
+                    <div class="faq-question p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-primary-dark">Tenho vergonha. Como lidar com isso?</h3>
+                        <i class="fas fa-chevron-down text-primary-medium transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer px-6 pb-0">
+                        <div class="pb-6 text-gray-700">
+                            Vergonha é comum, mas a consulta é conduzida com empatia, acolhimento e respeito. Tudo é
+                            feito com escuta ativa, sigilo e sem julgamentos. Seu corpo é seu templo — cuidar dele é um
+                            ato de amor e coragem.
                         </div>
                     </div>
                 </div>
@@ -757,7 +828,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-primary-dark mb-1">Telefone</h3>
-                                <p class="text-gray-700">(71) 98465-6006</p>
+                                <p class="text-gray-700">(71) 98148-4949</p>
                             </div>
                         </div>
 
@@ -793,7 +864,7 @@
                                 class="bg-primary-medium hover:bg-primary-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition social-animate">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://wa.me/71984656006"
+                            <a href="https://wa.me/5571981484949"
                                 class="bg-primary-medium hover:bg-primary-dark text-white w-10 h-10 rounded-full flex items-center justify-center transition social-animate">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
@@ -803,12 +874,15 @@
 
                 <!-- Contact Form -->
                 <div>
-                    <form class="bg-primary-medium p-8 rounded-lg shadow-sm">
+                    <form class="bg-primary-medium p-8 rounded-lg shadow-sm" id="contact-form" autocomplete="off"
+                        novalidate>
                         <div class="mb-6">
                             <label for="name" class="block text-support-white font-medium mb-2">Nome Completo</label>
                             <input type="text" id="name"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent"
                                 required>
+                            <div id="name-error" class="text-red-600 text-sm mt-1 hidden">Por favor, preencha seu nome.
+                            </div>
                         </div>
 
                         <div class="mb-6">
@@ -818,10 +892,11 @@
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent"
                                 required>
                                 <option value="" disabled selected>Selecione uma opção</option>
-                                <option value="courses">Cursos Online</option>
                                 <option value="physiotherapy">Fisioterapia Pélvica</option>
-                                <option value="therapy">Sexóloga Cristã</option>
+                                <option value="therapy">Sexologia Cristã</option>
                             </select>
+                            <div id="service-error" class="text-red-600 text-sm mt-1 hidden">Selecione um serviço de
+                                interesse.</div>
                         </div>
 
                         <div class="mb-6 hidden" id="specific-topic-container">
@@ -831,15 +906,20 @@
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent">
                                 <!-- Options will be populated by JavaScript -->
                             </select>
+                            <div id="topic-error" class="text-red-600 text-sm mt-1 hidden">Selecione um assunto
+                                específico.</div>
                         </div>
 
                         <div class="mb-6">
                             <label for="message" class="block text-support-white font-medium mb-2">Mensagem</label>
                             <textarea id="message" rows="5"
                                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent"></textarea>
+                            <div id="message-error" class="text-red-600 text-sm mt-1 hidden">Por favor, escreva sua
+                                mensagem.</div>
                         </div>
 
-                        <button type="submit" class="w-full btn-form font-medium py-3 px-6 rounded-lg mt-2">
+                        <button type="submit" class="w-full btn-form font-medium py-3 px-6 rounded-lg mt-2"
+                            id="send-btn">
                             Enviar Mensagem
                         </button>
                     </form>
@@ -865,15 +945,107 @@
                 <div class="flex flex-col items-center md:flex-row md:space-x-6 w-full md:w-auto">
                     <div
                         class="flex flex-col items-center space-y-1 md:flex-row md:space-y-0 md:space-x-6 mt-2 md:mt-0">
-                        <a href="#" class="text-primary-light hover:text-white transition text-sm md:text-base">Termos
+                        <a href="#" id="open-terms"
+                            class="text-primary-light hover:text-white transition text-sm md:text-base">Termos
                             de Uso</a>
-                        <a href="#" class="text-primary-light hover:text-white transition text-sm md:text-base">Política
+                        <a href="#" id="open-privacy"
+                            class="text-primary-light hover:text-white transition text-sm md:text-base">Política
                             de Privacidade</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modal Termos de Uso -->
+    <div id="modal-terms"
+        class="fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-40 transition-all duration-300 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-[92vw] md:w-[520px] max-h-[90vh] flex flex-col relative">
+            <button id="close-terms"
+                class="absolute top-4 right-4 text-primary-dark text-2xl font-bold hover:text-primary-medium transition-colors focus:outline-none z-10"
+                aria-label="Fechar">&times;</button>
+            <div class="px-7 pt-8 pb-4 overflow-y-auto" style="max-height:70vh;">
+                <h2 class="text-2xl font-bold mb-5 text-primary-dark">Termos de Uso</h2>
+                <ol class="list-decimal list-inside space-y-4 text-gray-800 text-base">
+                    <li>
+                        <span class="font-semibold">Aceitação dos Termos</span><br>
+                        Ao acessar e utilizar este site, você concorda e aceita os termos e condições aqui
+                        estabelecidos.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Uso do Site</span><br>
+                        O conteúdo deste site é destinado apenas para fins informativos sobre os serviços de
+                        fisioterapia pélvica e sexualidade. Não utilizamos cookies ou coleta automática de dados.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Formulário de Contato</span><br>
+                        O formulário de contato solicita apenas o nome e direciona a conversa para o WhatsApp. O contato
+                        é iniciado pelo próprio usuário, de forma voluntária.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Links para Terceiros</span><br>
+                        Este site pode conter links para redes sociais e outros sites externos. Não nos
+                        responsabilizamos pelo conteúdo, políticas ou práticas de privacidade desses sites.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Alterações nos Termos</span><br>
+                        Os termos de uso podem ser alterados a qualquer momento, sem aviso prévio. Recomendamos a
+                        revisão periódica desta página.
+                    </li>
+                </ol>
+            </div>
+            <button
+                class="bg-primary-dark hover:bg-primary-medium text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 text-center m-6 mt-2"
+                id="close-terms-btn">
+                Fechar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Política de Privacidade -->
+    <div id="modal-privacy"
+        class="fixed inset-0 z-[200] flex items-center justify-center bg-black bg-opacity-40 transition-all duration-300 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-[92vw] md:w-[520px] max-h-[90vh] flex flex-col relative">
+            <button id="close-privacy"
+                class="absolute top-4 right-4 text-primary-dark text-2xl font-bold hover:text-primary-medium transition-colors focus:outline-none z-10"
+                aria-label="Fechar">&times;</button>
+            <div class="px-7 pt-8 pb-4 overflow-y-auto" style="max-height:70vh;">
+                <h2 class="text-2xl font-bold mb-5 text-primary-dark">Política de Privacidade</h2>
+                <ol class="list-decimal list-inside space-y-4 text-gray-800 text-base">
+                    <li>
+                        <span class="font-semibold">Coleta de Dados</span><br>
+                        Não coletamos dados pessoais automaticamente. O único dado solicitado é o nome, caso o usuário
+                        deseje entrar em contato via formulário.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Uso das Informações</span><br>
+                        As informações fornecidas são utilizadas exclusivamente para responder ao contato do usuário.
+                        Não compartilhamos dados com terceiros.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Redes Sociais e Links Externos</span><br>
+                        O site contém links para redes sociais e outros sites externos. Ao acessar esses links, o
+                        usuário estará sujeito às políticas de privacidade dessas plataformas.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Segurança</span><br>
+                        Adotamos medidas para proteger as informações fornecidas, mas não nos responsabilizamos por
+                        ações de terceiros ou incidentes fora do nosso controle.
+                    </li>
+                    <li>
+                        <span class="font-semibold">Alterações nesta Política</span><br>
+                        Esta política pode ser atualizada a qualquer momento. Consulte esta página regularmente para
+                        estar ciente de eventuais mudanças.
+                    </li>
+                </ol>
+            </div>
+            <button
+                class="bg-primary-dark hover:bg-primary-medium text-white font-medium py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 text-center m-6 mt-2"
+                id="close-privacy-btn">
+                Fechar
+            </button>
+        </div>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -907,11 +1079,7 @@
         const topicSelect = document.getElementById('specific-topic');
 
         const topics = {
-            courses: [
-                { value: 'info', text: 'Informações sobre Cursos' },
-                { value: 'matricula', text: 'Matrícula' },
-                { value: 'duvidas', text: 'Tirar Dúvidas' }
-            ],
+            // Removido: courses
             physiotherapy: [
                 { value: 'avaliacao', text: 'Agendar Avaliação' },
                 { value: 'dor', text: 'Informações sobre Tratamento para Dor' },
@@ -924,6 +1092,71 @@
             ]
         };
 
+        // Mapeamento para exibir o texto do serviço
+        const serviceLabels = {
+            physiotherapy: 'Fisioterapia Pélvica',
+            therapy: 'Sexologia Cristã'
+        };
+
+        // --- Validação em tempo real e envio para WhatsApp ---
+        const form = document.getElementById('contact-form');
+        const nameInput = document.getElementById('name');
+        const messageInput = document.getElementById('message');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Erro elements
+        const nameError = document.getElementById('name-error');
+        const serviceError = document.getElementById('service-error');
+        const topicError = document.getElementById('topic-error');
+        const messageError = document.getElementById('message-error');
+
+        // Helper para mostrar/ocultar erro
+        function showError(el, show) {
+            if (show) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+
+        // Validação de campos obrigatórios
+        function validateForm() {
+            let valid = true;
+            // Nome
+            if (!nameInput.value.trim()) {
+                showError(nameError, true);
+                valid = false;
+            } else {
+                showError(nameError, false);
+            }
+            // Serviço
+            if (!serviceSelect.value) {
+                showError(serviceError, true);
+                valid = false;
+            } else {
+                showError(serviceError, false);
+            }
+            // Assunto (só se container estiver visível)
+            if (!topicContainer.classList.contains('hidden') && !topicSelect.value) {
+                showError(topicError, true);
+                valid = false;
+            } else {
+                showError(topicError, false);
+            }
+            // Mensagem
+            if (!messageInput.value.trim()) {
+                showError(messageError, true);
+                valid = false;
+            } else {
+                showError(messageError, false);
+            }
+            return valid;
+        }
+
+        // Validação em tempo real
+        nameInput.addEventListener('input', validateForm);
+        serviceSelect.addEventListener('change', validateForm);
+        topicSelect.addEventListener('change', validateForm);
+        messageInput.addEventListener('input', validateForm);
+
+        // Atualiza tópicos e valida ao trocar serviço
         serviceSelect.addEventListener('change', function () {
             const selectedService = this.value;
 
@@ -945,29 +1178,31 @@
                 // Hide the topic container if no service is selected
                 topicContainer.classList.add('hidden');
             }
+            validateForm();
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+        // Envio do formulário para WhatsApp
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!validateForm()) return;
 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+            const nome = nameInput.value.trim();
+            const servico = serviceLabels[serviceSelect.value] || '';
+            const assunto = topicSelect.options[topicSelect.selectedIndex]?.text || '';
+            const mensagem = messageInput.value.trim();
 
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+            // Mensagem formatada bonitinha com emoji e espaçamento
+            let texto = `👋 Olá, Dra. Érica, tudo bem?\n\n`;
+            texto += `Meu nome é ${nome} e estou entrando em contato através do seu site.\n\n`;
+            texto += `Gostaria de saber mais sobre o serviço de *${servico}*`;
+            if (assunto) texto += `, especificamente sobre *${assunto}*`;
+            texto += `.\n\n`;
+            texto += `${mensagem}\n\n`;
+            texto += `Obrigada!`;
 
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
+            // Substitui \n por %0A e * por %2A para negrito no WhatsApp
+            const url = `https://wa.me/5571981484949?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
         });
 
         // Custom Mobile Menu Animation
@@ -1094,6 +1329,42 @@
                         mobileMenu.classList.add('hidden');
                     }
                 }
+            });
+        });
+
+        // Modal Termos/Privacidade
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('opacity-0', 'pointer-events-none');
+            document.getElementById(modalId).classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById(modalId).classList.remove('opacity-100');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('open-terms').addEventListener('click', function (e) {
+            e.preventDefault(); openModal('modal-terms');
+        });
+        document.getElementById('open-privacy').addEventListener('click', function (e) {
+            e.preventDefault(); openModal('modal-privacy');
+        });
+        document.getElementById('close-terms').addEventListener('click', function () {
+            closeModal('modal-terms');
+        });
+        document.getElementById('close-terms-btn').addEventListener('click', function () {
+            closeModal('modal-terms');
+        });
+        document.getElementById('close-privacy').addEventListener('click', function () {
+            closeModal('modal-privacy');
+        });
+        document.getElementById('close-privacy-btn').addEventListener('click', function () {
+            closeModal('modal-privacy');
+        });
+        // Fecha modal ao clicar fora do conteúdo
+        ['modal-terms', 'modal-privacy'].forEach(function (id) {
+            document.getElementById(id).addEventListener('mousedown', function (e) {
+                if (e.target === this) closeModal(id);
             });
         });
     </script>
