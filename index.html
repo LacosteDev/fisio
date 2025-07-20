@@ -370,6 +370,24 @@
             }
         }
 
+        /* HERO: Ajustes para telas full HD (1920x1080) com escala ampliada (ex: 125%) */
+        @media (min-width: 1920px) and (max-width: 1921px) and (min-resolution: 120dpi),
+        (min-width: 1920px) and (max-width: 1921px) and (min-device-pixel-ratio: 1.25) {
+            #home .container {
+                padding-top: 6.5rem !important;
+            }
+
+            #home .minha-missao {
+                display: none !important;
+            }
+
+            #home .float-hero-img {
+                content: url('assets/erica_2.webp');
+                object-position: center top !important;
+                max-width: 380px !important;
+            }
+        }
+
         /* ZOOM para telas maiores que full HD */
         @media (min-width: 1921px) {
             .container {
@@ -425,6 +443,23 @@
 
         .service-card .relative {
             z-index: 2;
+        }
+
+        /* HERO: Força layout de resolução média para hero section em telas de 1366px até 1600px */
+        @media (min-width: 1366px) and (max-width: 1600px) {
+            #home .container {
+                padding-top: 6.5rem !important;
+                max-width: 1200px !important;
+            }
+
+            #home .minha-missao {
+                display: none !important;
+            }
+
+            #home .float-hero-img {
+                object-position: 20% top !important;
+                max-width: 380px !important;
+            }
         }
     </style>
 </head>
